@@ -45,10 +45,13 @@ int main(int argc, char *argv[])
     /* build the entry */
     entry *pHead, *e;
     pHead = (entry *) malloc(sizeof(entry));
-    printf("size of entry : %lu bytes\n", sizeof(entry));
-    e = pHead;
-    e->pNext = NULL;
-
+    if (pHead == NULL) {
+        printf("no memory please check!\n");
+    } else {
+        printf("size of entry : %lu bytes\n", sizeof(entry));
+        e = pHead;
+        e->pNext = NULL;
+    }
 #if defined(__GNUC__)
     __builtin___clear_cache((char *) pHead, (char *) pHead + sizeof(entry));
 #endif
