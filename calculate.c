@@ -43,7 +43,14 @@ int main(void)
         opt_sum_a += opt_a;
         opt_sum_f += opt_f;
     }
-
+    fp = fopen("hash.txt", "r");
+    if (!fp) {
+        fp = fopen("opt.txt", "r");
+        if (!fp) {
+            printf("ERROR opening input file opt.txt\n");
+            exit(0);
+        }
+    }
     double hash_sum_a = 0.0, hash_sum_f = 0.0, hash_a, hash_f;
     for (i = 0; i < 100; i++) {
         if (feof(fp)) {
