@@ -7,7 +7,7 @@
 
 entry *findName(char lastName[], entry *pHead)
 {
-    /* TODO: implement */
+    /* TODO: implement hash*/
     unsigned int value = BKDRhash(lastName);
 
     pHead = hashtable[value];
